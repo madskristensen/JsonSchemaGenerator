@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/vsix-publish",
+  "categories": [ "data" ],
+  "identity": {
+    "internalName": "JSONSchemaGenerator2",
+    "tags": [ "json", "schema" ]
+  },
+  "assetFiles": [
+
+  ],
+  "overview": "README.md",
+  "publisher": "MadsKristensen",
+  "repo": "https://github.com/MadsKristensen/JSONSchemaGenerator"
+}

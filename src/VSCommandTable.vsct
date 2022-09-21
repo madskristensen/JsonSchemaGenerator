@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="VSGlobals.vsct"/>
+
+  <Commands package="JsonSchemaGenerator">
+    <Groups>
+      <Group guid="JsonSchemaGenerator" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="VSMainMenu" id="ItemNode"/>
+      </Group>
+      <Group guid="JsonSchemaGenerator" id="FlyoutMenuGroup" priority="0x0600">
+        <Parent guid="JsonSchemaGenerator" id="FlyoutMenu"/>
+      </Group>
+    </Groups>
+
+    <Menus>
+      <Menu guid="JsonSchemaGenerator" id="FlyoutMenu" priority="100" type="Menu">
+        <Parent guid="JsonSchemaGenerator" id="MyMenuGroup"/>
+        <Strings>
+          <ButtonText>JSON Schema</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <Button guid="JsonSchemaGenerator" id="GenerateSchema" priority="0x0100" type="Button">
+        <Parent guid="JsonSchemaGenerator" id="FlyoutMenuGroup" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Generate JSON Schema from File</ButtonText>
+          <LocCanonicalName>.JsonSchemaGenerator.GenerateSchema</LocCanonicalName>
+        </Strings>
+      </Button>
+      <Button guid="JsonSchemaGenerator" id="GenerateSample" priority="0x0110" type="Button">
+        <Parent guid="JsonSchemaGenerator" id="FlyoutMenuGroup" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Generate JSON File from Schema</ButtonText>
+          <LocCanonicalName>.JsonSchemaGenerator.GenerateSample</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <VisibilityConstraints>
+    <VisibilityItem guid="JsonSchemaGenerator" id="GenerateSchema" context="JsonFile" />
+  </VisibilityConstraints>
+
+  <Symbols>
+    <GuidSymbol name="JsonFile" value="{9955383a-5cc6-4936-998b-df9ac0a61916}" />
+
+    <GuidSymbol name="JsonSchemaGenerator" value="{9955383a-5cc6-4936-998b-df9ac0a61915}">
+      <IDSymbol name="MyMenuGroup" value="0x0001" />
+      <IDSymbol name="FlyoutMenuGroup" value="0x0002" />
+      <IDSymbol name="FlyoutMenu" value="0x0003" />
+      <IDSymbol name="GenerateSchema" value="0x0100" />
+      <IDSymbol name="GenerateSample" value="0x0110" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
