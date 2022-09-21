@@ -2,7 +2,7 @@
 [vsixgallery]: http://vsixgallery.com/extension/JsonSchemaGenerator.dbd91e6f-6362-4949-9b6c-c2d190ade159/
 [repo]:https://github.com/madskristensen/JSONSchemaGenerator
 
-# Rainbow Braces for Visual Studio
+# JSON Schema Generator
 
 [![Build](https://github.com/madskristensen/JSONSchemaGenerator/actions/workflows/build.yaml/badge.svg)](https://github.com/madskristensen/JSONSchemaGenerator/actions/workflows/build.yaml)
 
