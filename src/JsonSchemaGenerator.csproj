@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Commands\GenerateSampleCommand.cs" />
+    <Compile Include="Options\General.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\GenerateSchemaCommand.cs" />
     <Compile Include="JsonSchemaGeneratorPackage.cs" />

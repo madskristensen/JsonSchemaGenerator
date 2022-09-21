@@ -18,8 +18,12 @@ namespace JsonSchemaGenerator
         termValues: new[] { "HierSingleSelectionName:.json$" })]
     public sealed class JsonSchemaGeneratorPackage : ToolkitPackage
     {
+        public static RatingPrompt RatingPrompt { get; private set;  } 
+        
         protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
+            RatingPrompt = new("MadsKristensen.JSONSchemaGenerator2", Vsix.Name, await General.GetLiveInstanceAsync(), 2);
+
             await this.RegisterCommandsAsync();
         }
     }

@@ -35,8 +35,9 @@ namespace JsonSchemaGenerator
                 {
                     await project.AddExistingFilesAsync(dialog.FileName);
                 }
-                
+
                 await VS.Documents.OpenAsync(dialog.FileName);
+                JsonSchemaGeneratorPackage.RatingPrompt.RegisterSuccessfulUsage();
             }
         }
     }

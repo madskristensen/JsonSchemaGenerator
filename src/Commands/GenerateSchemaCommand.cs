@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Windows;
-using Microsoft.VisualStudio.PlatformUI.OleComponentSupport;
 using Microsoft.Win32;
 using NJsonSchema;
 
@@ -13,8 +12,8 @@ namespace JsonSchemaGenerator
         {
             SolutionItem file = await VS.Solutions.GetActiveItemAsync();
 
-            var schema = JsonSchema.FromSampleJson(File.ReadAllText(file.FullPath));
-            var schemaFileName = Path.GetFileNameWithoutExtension(file.FullPath) + ".schema.json";
+            JsonSchema schema = JsonSchema.FromSampleJson(File.ReadAllText(file.FullPath));
+            string schemaFileName = Path.GetFileNameWithoutExtension(file.FullPath) + ".schema.json";
 
             SaveFileDialog dialog = new()
             {
@@ -31,8 +30,9 @@ namespace JsonSchemaGenerator
                 {
                     await project.AddExistingFilesAsync(dialog.FileName);
                 }
-                
+
                 await VS.Documents.OpenAsync(dialog.FileName);
+                JsonSchemaGeneratorPackage.RatingPrompt.RegisterSuccessfulUsage();
             }
         }
     }
