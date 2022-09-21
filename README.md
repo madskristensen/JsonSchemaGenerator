@@ -25,6 +25,8 @@ If you already have a local JSON schema file, you can generate a JSON file with 
 
 Right-click your JSON schema file in Solution Explorer and select **Generate JSON File from Schema**. 
 
+*Powered by [NJsonSchema for .NET](https://github.com/RicoSuter/NJsonSchema) written by [Rico Suter](https://github.com/RicoSuter)*
+
 ## How can I help?
 If you enjoy using the extension, please give it a ★★★★★ rating on the [Visual Studio Marketplace][marketplace].
 
