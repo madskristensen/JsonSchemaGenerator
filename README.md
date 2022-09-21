@@ -4,34 +4,26 @@
 
 # Rainbow Braces for Visual Studio
 
-[![Build](https://github.com/madskristensen/RainbowBraces/actions/workflows/build.yaml/badge.svg)](https://github.com/madskristensen/RainbowBraces/actions/workflows/build.yaml)
+[![Build](https://github.com/madskristensen/JSONSchemaGenerator/actions/workflows/build.yaml/badge.svg)](https://github.com/madskristensen/JSONSchemaGenerator/actions/workflows/build.yaml)
 
 Download this extension from the [Visual Studio Marketplace][marketplace]
 or get the [CI build][vsixgallery].
 
 --------------------------------------
 
-Colorizes matching brace pairs to make it easy to identify them and their scope. Works for curly brackets, parentheses, and square brackets. Inspired by the [Bracket pair colorization](https://developercommunity.visualstudio.com/t/Bracket-pair-colorization/1631048?space=8&ftype=idea&q=brackets) feature request for Visual Studio (please go vote for it).
+Allows you to easily generate a schema file from a JSON file and generate a JSON file with dummy data based on a schema file.
 
-![Screenshot](art/screenshot.png)
+![screenshot](art/screenshot.png)
 
-Both light and dark themes are supported.
+## Generate schema from JSON file
+Right-click your JSON file in Solution Explorer and select **Generate JSON Schema from File**. A new file will be created with the same name as the JSON file, but with the extension `.schema.json`.
 
-![Screenshot](art/theme-colors.png)
+You'll be asked where to place the generated file before it's being generated.
 
-To toggle the brace colorization on and off, a menu item is available under the **Edit -> Advanced** menu or using the shortcut **Ctrl+Shift+9**.
+## Generate JSON file from schema
+If you already have a local JSON schema file, you can generate a JSON file with dummy data adhearing to the schema. 
 
-![Menu](art/menu.png)
-
-You can customize the colors from the **Tools -> Options** dialog.
-
-![Options](art/options.png)
-
-There are also a few other specific options available under the **Fonts and Colors** tree node.
-
-![Options2](art/options2.png)
-
-For more advanced features, I recommend the free [Viasfora extension](https://marketplace.visualstudio.com/items?itemName=TomasRestrepo.Viasfora) by [Tomas Restrepo](https://twitter.com/tomasrestrepo).
+Right-click your JSON schema file in Solution Explorer and select **Generate JSON File from Schema**. 
 
 ## How can I help?
 If you enjoy using the extension, please give it a ★★★★★ rating on the [Visual Studio Marketplace][marketplace].
