@@ -23,7 +23,7 @@ You'll be asked where to place the generated file before it's being generated.
 ## Generate JSON file from schema
 If you already have a local JSON schema file, you can generate a JSON file with dummy data adhearing to the schema. 
 
-Right-click your JSON schema file in Solution Explorer and select **Generate JSON File from Schema**. 
+Right-click your JSON schema file in Solution Explorer and select **Generate JSON File from Schema**. You'll now be prompted to enter a file name and the file is generated.
 
 *Powered by [NJsonSchema for .NET](https://github.com/RicoSuter/NJsonSchema) written by [Rico Suter](https://github.com/RicoSuter)*
 
