@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="JsonSchemaGenerator.dbd91e6f-6362-4949-9b6c-c2d190ade159" Version="1.0.503" Language="en-US" Publisher="Mads Kristensen" />
+        <Identity Id="JsonSchemaGenerator.dbd91e6f-6362-4949-9b6c-c2d190ade159" Version="1.0.505" Language="en-US" Publisher="Mads Kristensen" />
         <DisplayName>JSON Schema Tools</DisplayName>
         <Description xml:space="preserve">Allows you to easily generate a schema file from a JSON file and generate a JSON file with dummy data based on a schema file.</Description>
         <MoreInfo>https://github.com/MadsKristensen/JSONSchemaGenerator</MoreInfo>

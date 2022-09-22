@@ -1,0 +1,38 @@
+﻿<platform:DialogWindow x:Class="JsonSchemaGenerator.Commands.CSharpSettingsWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JsonSchemaGenerator.Commands"
+             xmlns:platform="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
+             xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
+             mc:Ignorable="d" 
+             toolkit:Themes.UseVsTheme="True"
+             d:DesignHeight="200" d:DesignWidth="400" MinWidth="400" Title="C# Generation Settings" ShowInTaskbar="False" SizeToContent="WidthAndHeight"  WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Content="Schema type" />
+        <ComboBox Grid.Column="1" Grid.Row="0" Name="cbSchemaType" SelectedIndex="0" Margin="0 0 0 10" Padding="3" />
+
+        <Label Grid.Column="0" Grid.Row="1" Content="Library" />
+        <ComboBox Grid.Column="1" Grid.Row="1" Name="cbLibrary" SelectedIndex="0" Margin="0 0 0 10" Padding="3" />
+
+        <Label Grid.Column="0" Grid.Row="2" Content="Style" />
+        <ComboBox Grid.Column="1" Grid.Row="2" Name="cbStyle" SelectedIndex="0" Margin="0 0 0 10" Padding="3" />
+
+        <StackPanel Grid.Column="2" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button IsCancel="True" Content="Cancel" Padding="10" Margin="0 0 10 0"/>
+            <Button IsDefault="True" Content="OK" Padding="10" Click="OnOkClick" />
+        </StackPanel>
+    </Grid>
+</platform:DialogWindow>

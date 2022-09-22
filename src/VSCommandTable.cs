@@ -26,10 +26,13 @@ namespace JsonSchemaGenerator
     internal sealed partial class PackageIds
     {
         public const int MyMenuGroup = 0x0001;
-        public const int FlyoutMenuGroup = 0x0002;
-        public const int FlyoutMenu = 0x0003;
+        public const int SchemaMenuGroup = 0x0002;
+        public const int SampleMenuGroup = 0x0003;
+        public const int FlyoutMenu = 0x0004;
         public const int GenerateSchema = 0x0100;
-        public const int GenerateSample = 0x0110;
+        public const int GenerateJson = 0x0110;
+        public const int GenerateCSharp = 0x0120;
+        public const int GenerateTypeScript = 0x0130;
         public const int jsonContextMenu = 0x0001;
     }
 }

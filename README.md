@@ -20,12 +20,19 @@ Right-click your JSON file in the editor window and select **Generate JSON Schem
 
 You'll be asked where to place the generated file before it's being generated. Once created, the new schema will be applied to the document automtically.
 
-## Generate Sample File
-If you already have a local JSON schema file, you can generate a JSON file with dummy data adhearing to the schema. 
+## Generate files from a JSON Schema
+If you already have a local JSON schema file, you can generate files in different formats based on it. 
 
-Right-click your JSON schema file in the editor window and select **Generate Sample File...**. You'll now be prompted to enter a file name and the file is generated.
+### JSON
+To generate a JSON file with dummy data, select the command **Generate JSON from Schema**. The new sample JSON file will automatically get the schema applied to it.
 
-The new sample JSON file will automatically get the schema applied to it.
+### C#
+To generate a C# class file, select the command **Generate C# from Schema...**. This will open a dialog for you to select various settings.
+
+![c# settings](art/csharp-settings.png)
+
+### TypeScript
+To generate TypeScript types based on the JSON Schema, select the command **Generate TypeScript from Schema**.
 
 *Powered by [NJsonSchema for .NET](https://github.com/RicoSuter/NJsonSchema) written by [Rico Suter](https://github.com/RicoSuter)*
 

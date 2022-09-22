@@ -12,7 +12,7 @@ namespace JsonSchemaGenerator
         public const string Name = "JSON Schema Tools";
         public const string Description = @"Allows you to easily generate a schema file from a JSON file and generate a JSON file with dummy data based on a schema file.";
         public const string Language = "en-US";
-        public const string Version = "1.0.503";
+        public const string Version = "1.0.505";
         public const string Author = "Mads Kristensen";
         public const string Tags = "json, schema";
     }

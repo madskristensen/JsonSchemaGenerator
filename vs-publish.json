@@ -9,6 +9,10 @@
     {
       "pathOnDisk": "art/screenshot.png",
       "targetPath": "art/screenshot.png"
+    },
+    {
+      "pathOnDisk": "art/csharp-settings.png",
+      "targetPath": "art/csharp-settings.png"
     }
   ],
   "overview": "README.md",

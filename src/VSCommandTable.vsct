@@ -3,6 +3,7 @@
 
   <Extern href="stdidcmd.h"/>
   <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
   <Include href="VSGlobals.vsct"/>
 
   <Commands package="JsonSchemaGenerator">
@@ -10,7 +11,10 @@
       <Group guid="JsonSchemaGenerator" id="MyMenuGroup" priority="0x0600">
         <Parent guid="JsonCmdSet" id="jsonContextMenu"/>
       </Group>
-      <Group guid="JsonSchemaGenerator" id="FlyoutMenuGroup" priority="0x0600">
+      <Group guid="JsonSchemaGenerator" id="SchemaMenuGroup" priority="0x0600">
+        <Parent guid="JsonSchemaGenerator" id="FlyoutMenu"/>
+      </Group>
+      <Group guid="JsonSchemaGenerator" id="SampleMenuGroup" priority="0x0700">
         <Parent guid="JsonSchemaGenerator" id="FlyoutMenu"/>
       </Group>
     </Groups>
@@ -31,17 +35,37 @@
         or combo box in a toolbar. -->
     <Buttons>
       <Button guid="JsonSchemaGenerator" id="GenerateSchema" priority="0x0100" type="Button">
-        <Parent guid="JsonSchemaGenerator" id="FlyoutMenuGroup" />
+        <Parent guid="JsonSchemaGenerator" id="SchemaMenuGroup" />
         <Strings>
-          <ButtonText>Generate JSON Schema...</ButtonText>
+          <ButtonText>Generate JSON Schema</ButtonText>
           <LocCanonicalName>.JsonSchemaGenerator.GenerateSchema</LocCanonicalName>
         </Strings>
       </Button>
-      <Button guid="JsonSchemaGenerator" id="GenerateSample" priority="0x0110" type="Button">
-        <Parent guid="JsonSchemaGenerator" id="FlyoutMenuGroup" />
+      <Button guid="JsonSchemaGenerator" id="GenerateJson" priority="0x0110" type="Button">
+        <Parent guid="JsonSchemaGenerator" id="SampleMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="JSONScript"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>Generate Sample File...</ButtonText>
-          <LocCanonicalName>.JsonSchemaGenerator.GenerateSample</LocCanonicalName>
+          <ButtonText>Generate JSON from Schema</ButtonText>
+          <LocCanonicalName>.JsonSchemaGenerator.GenerateCSharp</LocCanonicalName>
+        </Strings>
+      </Button>
+      <Button guid="JsonSchemaGenerator" id="GenerateCSharp" priority="0x0120" type="Button">
+        <Parent guid="JsonSchemaGenerator" id="SampleMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="CSFileNode"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Generate C# from Schema...</ButtonText>
+          <LocCanonicalName>.JsonSchemaGenerator.GenerateCSharp</LocCanonicalName>
+        </Strings>
+      </Button>
+      <Button guid="JsonSchemaGenerator" id="GenerateTypeScript" priority="0x0130" type="Button">
+        <Parent guid="JsonSchemaGenerator" id="SampleMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="TSFileNode"/>
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Generate TypeScript from Schema</ButtonText>
+          <LocCanonicalName>.JsonSchemaGenerator.GenerateCSharp</LocCanonicalName>
         </Strings>
       </Button>
     </Buttons>
@@ -50,10 +74,13 @@
   <Symbols>
     <GuidSymbol name="JsonSchemaGenerator" value="{9955383a-5cc6-4936-998b-df9ac0a61915}">
       <IDSymbol name="MyMenuGroup" value="0x0001" />
-      <IDSymbol name="FlyoutMenuGroup" value="0x0002" />
-      <IDSymbol name="FlyoutMenu" value="0x0003" />
+      <IDSymbol name="SchemaMenuGroup" value="0x0002" />
+      <IDSymbol name="SampleMenuGroup" value="0x0003" />
+      <IDSymbol name="FlyoutMenu" value="0x0004" />
       <IDSymbol name="GenerateSchema" value="0x0100" />
-      <IDSymbol name="GenerateSample" value="0x0110" />
+      <IDSymbol name="GenerateJson" value="0x0110" />
+      <IDSymbol name="GenerateCSharp" value="0x0120" />
+      <IDSymbol name="GenerateTypeScript" value="0x0130" />
     </GuidSymbol>
     
     <!-- External -->
