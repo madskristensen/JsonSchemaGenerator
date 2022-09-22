@@ -13,11 +13,11 @@ namespace JsonSchemaGenerator
     /// </summary>
     internal sealed partial class PackageGuids
     {
-        public const string JsonFileString = "9955383a-5cc6-4936-998b-df9ac0a61916";
-        public static Guid JsonFile = new Guid(JsonFileString);
-
         public const string JsonSchemaGeneratorString = "9955383a-5cc6-4936-998b-df9ac0a61915";
         public static Guid JsonSchemaGenerator = new Guid(JsonSchemaGeneratorString);
+
+        public const string JsonCmdSetString = "f718ca06-cf4f-4a0c-9106-e79e9ee5e7cd";
+        public static Guid JsonCmdSet = new Guid(JsonCmdSetString);
     }
 
     /// <summary>
@@ -30,5 +30,6 @@ namespace JsonSchemaGenerator
         public const int FlyoutMenu = 0x0003;
         public const int GenerateSchema = 0x0100;
         public const int GenerateSample = 0x0110;
+        public const int jsonContextMenu = 0x0001;
     }
 }

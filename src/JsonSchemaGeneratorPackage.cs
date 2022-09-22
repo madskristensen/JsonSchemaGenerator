@@ -11,11 +11,6 @@ namespace JsonSchemaGenerator
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(PackageGuids.JsonSchemaGeneratorString)]
-    [ProvideUIContextRule(PackageGuids.JsonFileString,
-        name: "JSON file",
-        expression: "json",
-        termNames: new[] { "json" },
-        termValues: new[] { "HierSingleSelectionName:.json$" })]
     public sealed class JsonSchemaGeneratorPackage : ToolkitPackage
     {
         public static RatingPrompt RatingPrompt { get; private set;  } 

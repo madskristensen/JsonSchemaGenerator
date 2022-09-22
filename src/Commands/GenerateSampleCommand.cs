@@ -10,9 +10,9 @@ namespace JsonSchemaGenerator
     {
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
-            SolutionItem file = await VS.Solutions.GetActiveItemAsync();
+            DocumentView docView = await VS.Documents.GetActiveDocumentViewAsync();
 
-            JsonSchema schema = await JsonSchema.FromFileAsync(file.FullPath, Package.DisposalToken);
+            JsonSchema schema = await JsonSchema.FromFileAsync(docView.FilePath, Package.DisposalToken);
 
             if (string.IsNullOrEmpty(schema.SchemaVersion))
             {
@@ -24,19 +24,27 @@ namespace JsonSchemaGenerator
             {
                 DefaultExt = ".json",
                 FileName = "sample.json",
-                InitialDirectory = Path.GetDirectoryName(file.FullPath)
+                InitialDirectory = Path.GetDirectoryName(docView.FilePath)
             };
 
             if (dialog.ShowDialog(Application.Current.MainWindow) == true)
             {
                 File.WriteAllText(dialog.FileName, schema.ToSampleJson().ToString());
 
-                if (file.FindParent(SolutionItemType.Project) is Project project)
+                if (await VS.Solutions.GetActiveProjectAsync() is Project project)
                 {
                     await project.AddExistingFilesAsync(dialog.FileName);
                 }
 
                 await VS.Documents.OpenAsync(dialog.FileName);
+
+                // Apply schema to document
+                string relativeSchemaPath = PackageUtilities.MakeRelative(dialog.FileName, docView.FilePath);
+                IDataObject oldClipboard = Clipboard.GetDataObject();
+                Clipboard.SetText(relativeSchemaPath);
+                System.Windows.Forms.SendKeys.SendWait($"{{F4}}^v~");
+                Clipboard.SetDataObject(oldClipboard, true);
+
                 JsonSchemaGeneratorPackage.RatingPrompt.RegisterSuccessfulUsage();
             }
         }

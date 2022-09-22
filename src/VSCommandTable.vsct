@@ -8,7 +8,7 @@
   <Commands package="JsonSchemaGenerator">
     <Groups>
       <Group guid="JsonSchemaGenerator" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="VSMainMenu" id="ItemNode"/>
+        <Parent guid="JsonCmdSet" id="jsonContextMenu"/>
       </Group>
       <Group guid="JsonSchemaGenerator" id="FlyoutMenuGroup" priority="0x0600">
         <Parent guid="JsonSchemaGenerator" id="FlyoutMenu"/>
@@ -18,8 +18,11 @@
     <Menus>
       <Menu guid="JsonSchemaGenerator" id="FlyoutMenu" priority="100" type="Menu">
         <Parent guid="JsonSchemaGenerator" id="MyMenuGroup"/>
+        <CommandFlag>TogglePatternAvailable</CommandFlag>
+        <CommandFlag>SelectionPatternAvailable</CommandFlag>
         <Strings>
           <ButtonText>JSON Schema</ButtonText>
+          <MenuText>JSON Schema</MenuText>
         </Strings>
       </Menu>
     </Menus>
@@ -29,36 +32,33 @@
     <Buttons>
       <Button guid="JsonSchemaGenerator" id="GenerateSchema" priority="0x0100" type="Button">
         <Parent guid="JsonSchemaGenerator" id="FlyoutMenuGroup" />
-        <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>Generate JSON Schema from File</ButtonText>
+          <ButtonText>Generate JSON Schema...</ButtonText>
           <LocCanonicalName>.JsonSchemaGenerator.GenerateSchema</LocCanonicalName>
         </Strings>
       </Button>
       <Button guid="JsonSchemaGenerator" id="GenerateSample" priority="0x0110" type="Button">
         <Parent guid="JsonSchemaGenerator" id="FlyoutMenuGroup" />
-        <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>Generate JSON File from Schema</ButtonText>
+          <ButtonText>Generate Sample File...</ButtonText>
           <LocCanonicalName>.JsonSchemaGenerator.GenerateSample</LocCanonicalName>
         </Strings>
       </Button>
     </Buttons>
   </Commands>
 
-  <VisibilityConstraints>
-    <VisibilityItem guid="JsonSchemaGenerator" id="GenerateSchema" context="JsonFile" />
-  </VisibilityConstraints>
-
   <Symbols>
-    <GuidSymbol name="JsonFile" value="{9955383a-5cc6-4936-998b-df9ac0a61916}" />
-
     <GuidSymbol name="JsonSchemaGenerator" value="{9955383a-5cc6-4936-998b-df9ac0a61915}">
       <IDSymbol name="MyMenuGroup" value="0x0001" />
       <IDSymbol name="FlyoutMenuGroup" value="0x0002" />
       <IDSymbol name="FlyoutMenu" value="0x0003" />
       <IDSymbol name="GenerateSchema" value="0x0100" />
       <IDSymbol name="GenerateSample" value="0x0110" />
+    </GuidSymbol>
+    
+    <!-- External -->
+    <GuidSymbol name="JsonCmdSet" value="{F718CA06-CF4F-4A0C-9106-E79E9EE5E7CD}">
+      <IDSymbol name="jsonContextMenu" value="1" />
     </GuidSymbol>
   </Symbols>
 </CommandTable>
