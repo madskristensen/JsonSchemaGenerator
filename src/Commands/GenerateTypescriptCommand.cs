@@ -12,11 +12,10 @@ namespace JsonSchemaGenerator
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             DocumentView docView = await VS.Documents.GetActiveDocumentViewAsync();
-            JsonSchema schema = await JsonSchema.FromFileAsync(docView.FilePath);
+            JsonSchema schema = await GenerateCSharpCommand.GetOrCreateSchemaAsync(docView);
 
-            if (string.IsNullOrEmpty(schema?.SchemaVersion))
+            if (schema == null)
             {
-                await VS.MessageBox.ShowErrorAsync("The selected JSON file is not a valid schema.");
                 return;
             }
 

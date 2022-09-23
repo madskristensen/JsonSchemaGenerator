@@ -14,11 +14,10 @@ namespace JsonSchemaGenerator
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             DocumentView docView = await VS.Documents.GetActiveDocumentViewAsync();
-            JsonSchema schema = await JsonSchema.FromFileAsync(docView.FilePath);
+            JsonSchema schema = await GetOrCreateSchemaAsync(docView);
 
-            if (string.IsNullOrEmpty(schema?.SchemaVersion))
+            if (schema == null)
             {
-                await VS.MessageBox.ShowErrorAsync("The selected JSON file is not a valid schema.");
                 return;
             }
 
@@ -50,6 +49,26 @@ namespace JsonSchemaGenerator
                 await VS.Documents.OpenAsync(dialog.FileName);
                 JsonSchemaGeneratorPackage.RatingPrompt.RegisterSuccessfulUsage();
             }
+        }
+
+
+
+        public static async System.Threading.Tasks.Task<JsonSchema> GetOrCreateSchemaAsync(DocumentView documentView)
+        {
+            JsonSchema schema = await JsonSchema.FromFileAsync(documentView.FilePath);
+
+            if (string.IsNullOrEmpty(schema.SchemaVersion))
+            {
+                schema = JsonSchema.FromSampleJson(documentView.TextBuffer.CurrentSnapshot.GetText());
+            }
+
+            if (!schema.HasActualProperties)
+            {
+                await VS.MessageBox.ShowErrorAsync("The selected JSON file is not a valid schema.");
+                return null;
+            }
+
+            return schema;
         }
     }
 }

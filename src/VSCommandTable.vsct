@@ -37,17 +37,17 @@
       <Button guid="JsonSchemaGenerator" id="GenerateSchema" priority="0x0100" type="Button">
         <Parent guid="JsonSchemaGenerator" id="SchemaMenuGroup" />
         <Strings>
-          <ButtonText>Generate JSON Schema</ButtonText>
+          <ButtonText>Extract JSON Schema</ButtonText>
           <LocCanonicalName>.JsonSchemaGenerator.GenerateSchema</LocCanonicalName>
         </Strings>
       </Button>
       <Button guid="JsonSchemaGenerator" id="GenerateJson" priority="0x0110" type="Button">
-        <Parent guid="JsonSchemaGenerator" id="SampleMenuGroup" />
+        <Parent guid="JsonSchemaGenerator" id="SchemaMenuGroup" />
         <Icon guid="ImageCatalogGuid" id="JSONScript"/>
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>Generate JSON from Schema</ButtonText>
-          <LocCanonicalName>.JsonSchemaGenerator.GenerateCSharp</LocCanonicalName>
+          <ButtonText>Generate JSON Sample from Schema</ButtonText>
+          <LocCanonicalName>.JsonSchemaGenerator.GenerateJson</LocCanonicalName>
         </Strings>
       </Button>
       <Button guid="JsonSchemaGenerator" id="GenerateCSharp" priority="0x0120" type="Button">
@@ -55,7 +55,7 @@
         <Icon guid="ImageCatalogGuid" id="CSFileNode"/>
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>Generate C# from Schema...</ButtonText>
+          <ButtonText>Generate C# Model...</ButtonText>
           <LocCanonicalName>.JsonSchemaGenerator.GenerateCSharp</LocCanonicalName>
         </Strings>
       </Button>
@@ -64,8 +64,8 @@
         <Icon guid="ImageCatalogGuid" id="TSFileNode"/>
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>Generate TypeScript from Schema</ButtonText>
-          <LocCanonicalName>.JsonSchemaGenerator.GenerateCSharp</LocCanonicalName>
+          <ButtonText>Generate TypeScript Model</ButtonText>
+          <LocCanonicalName>.JsonSchemaGenerator.GenerateTypeScript</LocCanonicalName>
         </Strings>
       </Button>
     </Buttons>

@@ -11,8 +11,7 @@ namespace JsonSchemaGenerator
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             DocumentView docView = await VS.Documents.GetActiveDocumentViewAsync();
-
-            JsonSchema schema = await JsonSchema.FromFileAsync(docView.FilePath, Package.DisposalToken);
+            JsonSchema schema = await JsonSchema.FromFileAsync(docView.FilePath);
 
             if (string.IsNullOrEmpty(schema.SchemaVersion))
             {

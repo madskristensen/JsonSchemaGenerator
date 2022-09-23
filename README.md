@@ -16,7 +16,7 @@ Allows you to easily generate a schema file from a JSON file and generate a JSON
 ![screenshot](art/screenshot.png)
 
 ## Generate JSON Schema
-Right-click your JSON file in the editor window and select **Generate JSON Schema...**. A new file will be created with the same name as the JSON file, but with the extension `.schema.json`.
+Right-click your JSON file in the editor window and select **Extract JSON Schema**. A new file will be created with the same name as the JSON file, but with the extension `.schema.json`.
 
 You'll be asked where to place the generated file before it's being generated. Once created, the new schema will be applied to the document automtically.
 
@@ -24,15 +24,15 @@ You'll be asked where to place the generated file before it's being generated. O
 If you already have a local JSON schema file, you can generate files in different formats based on it. 
 
 ### JSON
-To generate a JSON file with dummy data, select the command **Generate JSON from Schema**. The new sample JSON file will automatically get the schema applied to it.
+To generate a JSON file with dummy data, select the command **Generate JSON Sample from Schema**. The new sample JSON file will automatically get the schema applied to it.
 
 ### C#
-To generate a C# class file, select the command **Generate C# from Schema...**. This will open a dialog for you to select various settings.
+To generate a C# class file, select the command **Generate C# Model...**. This will open a dialog for you to select various settings.
 
 ![c# settings](art/csharp-settings.png)
 
 ### TypeScript
-To generate TypeScript types based on the JSON Schema, select the command **Generate TypeScript from Schema**.
+To generate TypeScript types based on the JSON Schema, select the command **Generate TypeScript Model**.
 
 *Powered by [NJsonSchema for .NET](https://github.com/RicoSuter/NJsonSchema) written by [Rico Suter](https://github.com/RicoSuter)*
 
